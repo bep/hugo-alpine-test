@@ -1,0 +1,13 @@
+<html class="is-clipped">
+<head>
+    {{ hugo.Generator }}
+    {{ $alpine := resources.Get "js/alpine.js" }}
+    {{ $bulma := resources.Get "styles.scss" }}
+    {{ $style := $bulma | resources.ToCSS }}
+    <link href="{{ $style.RelPermalink }}" rel="stylesheet" />
+    <script src="{{ $alpine.RelPermalink }}" defer></script>
+</head>
+<body>
+    {{ block "main" . }}{{ end }}</div>
+</body>
+</html>

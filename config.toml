@@ -1,0 +1,17 @@
+disableKinds = ["section", "page", "taxonomy", "taxonomyTerm"]
+
+
+[module]
+[[module.imports]]
+path = "github.com/alpinejs/alpine"
+[[module.imports.mounts]]
+source = "dist"
+target = "assets/js"
+[[module.imports]]
+path = "github.com/jgthms/bulma"
+[[module.imports.mounts]]
+source = "bulma.sass"
+target = "assets/bulma.sass"
+[[module.imports.mounts]]
+source = "sass"
+target = "assets/sass"
