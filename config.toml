@@ -1,3 +1,4 @@
+baseURL = "https://agitated-kilby-da786e.netlify.com/"
 disableKinds = ["section", "page", "taxonomy", "taxonomyTerm"]
 
 
