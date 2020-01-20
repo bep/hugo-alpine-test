@@ -18,3 +18,6 @@ Alsos see:
 * The AlpineJS docs, see https://github.com/alpinejs/alpine
 * This project uses Bulma for styling see https://bulma.io/
 
+You may also want to follow this issue, which, once solved, will make AlpineJS a more or less complete solution for common problem:
+
+https://github.com/alpinejs/alpine/issues/49
