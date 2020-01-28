@@ -1,8 +1,24 @@
 baseURL = "https://agitated-kilby-da786e.netlify.com/"
 disableKinds = ["section", "page", "taxonomy", "taxonomyTerm"]
 
+[permalinks]
+  posts = "/:2006/:01/:02/:title/"
 
 [module]
+[[module.imports]]
+path="github.com/bep/portable-hugo-links"
+[[module.imports.mounts]]
+source = "layouts"
+target = "layouts"
+[[module.imports.mounts]]
+source = "README.md"
+target = "content/_index.md"
+[[module.imports.mounts]]
+source = "blog"
+target = "content/posts"
+[[module.imports.mounts]]
+source = "docs"
+target = "content/docs"
 [[module.imports]]
 path = "github.com/alpinejs/alpine"
 [[module.imports.mounts]]
@@ -24,3 +40,9 @@ target = "assets/fontawesome/scss"
 [[module.imports.mounts]]
 source = "webfonts"
 target = "static/webfonts"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = true
