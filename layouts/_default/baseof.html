@@ -4,13 +4,12 @@
     {{ hugo.Generator }}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {{ $alpine := resources.Get "js/alpine.js" }}
     {{ $bulma := resources.Get "styles.scss" }}
     {{ $style := $bulma | resources.ToCSS | minify }}
     <link href="{{ $style.RelPermalink }}" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js"
         integrity="sha256-iM4Yzi/zLj/IshPWMC1IluRxTtRjMqjPGd97TZ9yYpU=" crossorigin="anonymous"></script>
-    <script src="{{ $alpine.RelPermalink }}" defer></script>
+    {{ partial "vendor/alpinejs/script-src.html" }}
 </head>
 <body>
         {{ partial "alpine-blocks.html" . }}

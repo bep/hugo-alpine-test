@@ -5,6 +5,11 @@ github.com/alpinejs/alpine v1.9.5 h1:cw2uVyBoTbfrLXY5kdBnKF7xNU+xUTa2A9fIBprGsrM
 github.com/alpinejs/alpine v1.9.5/go.mod h1:BKI81egATMnaKqFeX5HEfYMnjZjcjcZmrYAu5Nck+EY=
 github.com/alpinejs/alpine v1.9.7 h1:pZ3/hTBnAd5lAU58kiGpyWcXcadaAZrWV5IctmNMlJU=
 github.com/alpinejs/alpine v1.9.7/go.mod h1:BKI81egATMnaKqFeX5HEfYMnjZjcjcZmrYAu5Nck+EY=
+github.com/bep/hugo-js-libs v0.0.0-20200129170838-3f6862fc2944 h1:r5agtKuqbU9JHaSRF8IQAxC8WqfyFLAmmzHko72BlBI=
+github.com/bep/hugo-js-libs/alpinejs v0.0.0-20200129170838-3f6862fc2944 h1:VHcszPMCPjmwUeSDrjYd6HsD7Xew7gAbdEFTfQWoju0=
+github.com/bep/hugo-js-libs/alpinejs v0.0.0-20200129170838-3f6862fc2944/go.mod h1:oNBDo4w7cl+SSgw/27lsDNmiyvMMvEc5VZ5a2mFqI/U=
+github.com/bep/hugo-js-libs/alpinejs v0.0.0-20200129173707-00fd98c20286 h1:8p6DRHPrZpnCtFEkqTpG+vzIHS1Y4AouW9yiSmvx3FA=
+github.com/bep/hugo-js-libs/alpinejs v0.0.0-20200129173707-00fd98c20286/go.mod h1:oNBDo4w7cl+SSgw/27lsDNmiyvMMvEc5VZ5a2mFqI/U=
 github.com/bep/portable-hugo-links v0.5.0 h1:qKFKwdRoDNpcdi7VPKqG4oFg3p9XNOqDaYAPGnagRYE=
 github.com/bep/portable-hugo-links v0.5.0/go.mod h1:THWnsWZWDsb4mF//7zPGPngV3N7HIOvIydJLClUvMRU=
 github.com/bep/portable-hugo-links v0.5.1 h1:HgMrMn80KHpfV5L7BZnJI7EJBHdQ7MKoqg+840ch/dA=
