@@ -11,6 +11,8 @@ You need Hugo extended version + Go installed to build. If that is installed you
 hugo server
 ```
 
+Note: Before https://github.com/gohugoio/hugo/pull/6822 gets merged, you need to run with `hugo server --disableLiveReload` for Turbolinks to work.
+
 And navigate to http://localhost:1313/
 
 Alsos see:

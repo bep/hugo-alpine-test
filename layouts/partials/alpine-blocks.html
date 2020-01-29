@@ -66,7 +66,7 @@
                 <div class="tile is-parent">
                     <article class="tile is-child notification">
                         <p class="title">Tabs</p>
-                        <div class="content tabs is-boxed is-toggle is-fullwidth" x-data="{ currentTab: 'tab1' }">
+                        <div class="content tabs is-boxed is-toggle is-fullwidth" x-data="{ currentTab: 'tab1' }" id="tabs" data-turbolinks-permanent>
                             <ul>
                                 <li x-bind:class="{ 'is-active': currentTab ===
                               'tab1' }" x-on:click="currentTab= 'tab1'"><a>Pictures</a></li>
@@ -95,3 +95,4 @@
         </div>
     </div>
 </section>
+

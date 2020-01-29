@@ -3,9 +3,13 @@ github.com/alpinejs/alpine v1.9.3 h1:c9E79DIuCRYvATGjzw+2Twy4Uzou/9yUURdWSgYplXQ
 github.com/alpinejs/alpine v1.9.3/go.mod h1:BKI81egATMnaKqFeX5HEfYMnjZjcjcZmrYAu5Nck+EY=
 github.com/alpinejs/alpine v1.9.5 h1:cw2uVyBoTbfrLXY5kdBnKF7xNU+xUTa2A9fIBprGsrM=
 github.com/alpinejs/alpine v1.9.5/go.mod h1:BKI81egATMnaKqFeX5HEfYMnjZjcjcZmrYAu5Nck+EY=
+github.com/alpinejs/alpine v1.9.7 h1:pZ3/hTBnAd5lAU58kiGpyWcXcadaAZrWV5IctmNMlJU=
+github.com/alpinejs/alpine v1.9.7/go.mod h1:BKI81egATMnaKqFeX5HEfYMnjZjcjcZmrYAu5Nck+EY=
 github.com/bep/portable-hugo-links v0.5.0 h1:qKFKwdRoDNpcdi7VPKqG4oFg3p9XNOqDaYAPGnagRYE=
 github.com/bep/portable-hugo-links v0.5.0/go.mod h1:THWnsWZWDsb4mF//7zPGPngV3N7HIOvIydJLClUvMRU=
 github.com/bep/portable-hugo-links v0.5.1 h1:HgMrMn80KHpfV5L7BZnJI7EJBHdQ7MKoqg+840ch/dA=
 github.com/bep/portable-hugo-links v0.5.1/go.mod h1:THWnsWZWDsb4mF//7zPGPngV3N7HIOvIydJLClUvMRU=
+github.com/bep/portable-hugo-links v0.5.2 h1:l4oMQEPClB6CSXF+pK2nUIwDeKGl2Sg2YyUgjNVwx64=
+github.com/bep/portable-hugo-links v0.5.2/go.mod h1:THWnsWZWDsb4mF//7zPGPngV3N7HIOvIydJLClUvMRU=
 github.com/jgthms/bulma v0.0.0-20200120094628-358c10bebf86 h1:+Ra3JS7v1it2vWe0+sxXBTDZxjuZMYrNfuIBTVQNvDU=
 github.com/jgthms/bulma v0.0.0-20200120094628-358c10bebf86/go.mod h1:89FLBKXYFKfOKAoDeUT26V0pHGwzr205cMXAEqtAVOI=

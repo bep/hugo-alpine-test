@@ -1,5 +1,5 @@
 baseURL = "https://agitated-kilby-da786e.netlify.com/"
-disableKinds = ["section", "page", "taxonomy", "taxonomyTerm"]
+disableKinds = ["section", "taxonomy", "taxonomyTerm"]
 
 [permalinks]
   posts = "/:2006/:01/:02/:title/"
