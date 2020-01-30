@@ -7,17 +7,14 @@
     {{ $bulma := resources.Get "styles.scss" }}
     {{ $style := $bulma | resources.ToCSS | minify }}
     <link href="{{ $style.RelPermalink }}" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js"
-        integrity="sha256-iM4Yzi/zLj/IshPWMC1IluRxTtRjMqjPGd97TZ9yYpU=" crossorigin="anonymous"></script>
-    {{ partial "vendor/alpinejs/script-src.html" }}
+    {{ partial "jslibs/alpinejs_turbolinks/script-src.html" }}
 </head>
 <body>
-        {{ partial "alpine-blocks.html" . }}
-        <section class="section">
-            <div class="container content" id="main">
-                {{ block "main" . }}{{ end }}
-            </div>
-        </section>
+    {{ partial "alpine-blocks.html" . }}
+    <section class="section">
+        <div class="container content" id="main">
+            {{ block "main" . }}{{ end }}
+        </div>
+    </section>
 </body>
-
 </html>
