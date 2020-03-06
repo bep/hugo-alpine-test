@@ -6,6 +6,7 @@ github.com/alpinejs/alpine v1.9.5 h1:cw2uVyBoTbfrLXY5kdBnKF7xNU+xUTa2A9fIBprGsrM
 github.com/alpinejs/alpine v1.9.5/go.mod h1:BKI81egATMnaKqFeX5HEfYMnjZjcjcZmrYAu5Nck+EY=
 github.com/alpinejs/alpine v1.9.7 h1:pZ3/hTBnAd5lAU58kiGpyWcXcadaAZrWV5IctmNMlJU=
 github.com/alpinejs/alpine v1.9.7/go.mod h1:BKI81egATMnaKqFeX5HEfYMnjZjcjcZmrYAu5Nck+EY=
+github.com/alpinejs/alpine v2.1.0+incompatible/go.mod h1:BKI81egATMnaKqFeX5HEfYMnjZjcjcZmrYAu5Nck+EY=
 github.com/bep/hugo-js-libs v0.0.0-20200129170838-3f6862fc2944 h1:r5agtKuqbU9JHaSRF8IQAxC8WqfyFLAmmzHko72BlBI=
 github.com/bep/hugo-js-libs/alpinejs v0.0.0-20200129170838-3f6862fc2944 h1:VHcszPMCPjmwUeSDrjYd6HsD7Xew7gAbdEFTfQWoju0=
 github.com/bep/hugo-js-libs/alpinejs v0.0.0-20200129170838-3f6862fc2944/go.mod h1:oNBDo4w7cl+SSgw/27lsDNmiyvMMvEc5VZ5a2mFqI/U=
@@ -23,6 +24,8 @@ github.com/bep/hugo-jslibs/alpinejs v0.0.0-20200129213657-ca4c28551e8d h1:0rdP4f
 github.com/bep/hugo-jslibs/alpinejs v0.0.0-20200129213657-ca4c28551e8d/go.mod h1:lsA5YidERLfH5waalbVhqmzDY7RElccnQzIrsEmMKSs=
 github.com/bep/hugo-jslibs/alpinejs v0.0.0-20200130074055-257607e78517/go.mod h1:lsA5YidERLfH5waalbVhqmzDY7RElccnQzIrsEmMKSs=
 github.com/bep/hugo-jslibs/alpinejs v0.1.0/go.mod h1:lsA5YidERLfH5waalbVhqmzDY7RElccnQzIrsEmMKSs=
+github.com/bep/hugo-jslibs/alpinejs v0.5.0 h1:8hLPRB231M3/VLt9DVhNnHpaGBiXMhwVCFYlz3ysOFY=
+github.com/bep/hugo-jslibs/alpinejs v0.5.0/go.mod h1:wf9mgCTM9hqiEzNBKaS1F/uFxlX5joZ29Jk/qsrGJKA=
 github.com/bep/hugo-jslibs/alpinejs_turbolinks v0.0.0-20200130073710-27dba4d00d7b h1:qCc47KqYw2Nz5ZEv9fDamDZcgUMgcXVGMfIL9OB8FqM=
 github.com/bep/hugo-jslibs/alpinejs_turbolinks v0.0.0-20200130073710-27dba4d00d7b/go.mod h1:FOyuy7RmxRFKeVZRumildTI8ihIK903aBkMk8uUchqc=
 github.com/bep/hugo-jslibs/alpinejs_turbolinks v0.0.0-20200130074055-257607e78517 h1:A4S2CbcH2dzBiqbP5f5TTwcBqjw+uBjd0I8326W3lp8=
