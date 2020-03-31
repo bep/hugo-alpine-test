@@ -6,7 +6,7 @@
                     <div class="tile is-parent is-vertical">
                         <article class="tile is-child notification is-primary">
                             <p class="title">x-bind class</p>
-                            <div class="control" x-data="{ show: false }">
+                            <div class="control" x-data="model.New()" x-init="init()">
                                 <button @click="show = ! show" class="button is-info">Show</button>
                                 <div class="modal" x-bind:class="{ 'is-active': show }">
                                     <div class="modal-background"></div>
@@ -28,8 +28,9 @@
                     <div class="tile is-parent">
                         <article class="tile is-child notification is-info">
                             <p class="title">Dropdown</p>
-                            <div class="dropdown" x-data="{ open: false }" x-bind:class="{ 'is-active': open }"
-                                x-on:click.away="open=false" x-cloak>
+                            <div class="dropdown" x-data="model.New()" x-init="init()"
+                                x-bind:class="{ 'is-active': open }" x-on:click.away="open=false" id="dropdown"
+                                data-turbolinks-permanent>
                                 <div class="dropdown-trigger">
                                     <button x-on:click="open=!open" class="button" aria-haspopup="true"
                                         aria-controls="dropdown-menu">
@@ -41,22 +42,11 @@
                                 </div>
                                 <div class="dropdown-menu" id="dropdown-menu" role="menu">
                                     <div class="dropdown-content">
-                                        <a href="#" class="dropdown-item">
-                                            Dropdown item
-                                        </a>
-                                        <a class="dropdown-item">
-                                            Other dropdown item
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                            Active dropdown item
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                            Other dropdown item
-                                        </a>
-                                        <hr class="dropdown-divider">
-                                        <a href="#" class="dropdown-item">
-                                            With a divider
-                                        </a>
+                                        <template x-for="item in data.items" :key="item">
+                                            <a href="#" class="dropdown-item"
+                                                x-bind:class="{ 'is-active' : item.isActive }" x-text="item.name"></a>
+                                        </template>
+
                                     </div>
                                 </div>
                             </div>
@@ -66,7 +56,8 @@
                 <div class="tile is-parent">
                     <article class="tile is-child notification">
                         <p class="title">Tabs</p>
-                        <div class="content tabs is-boxed is-toggle is-fullwidth" x-data="{ currentTab: 'tab1' }" id="tabs" data-turbolinks-permanent>
+                        <div class="content tabs is-boxed is-toggle is-fullwidth" x-data="{ currentTab: 'tab1' }"
+                            id="tabs" data-turbolinks-permanent>
                             <ul>
                                 <li x-bind:class="{ 'is-active': currentTab ===
                               'tab1' }" x-on:click="currentTab= 'tab1'"><a>Pictures</a></li>
@@ -87,7 +78,8 @@
                         <p class="title">Tall tile</p>
                         <p class="subtitle">With even more content</p>
                         <div class="content">
-                            <a href="https://agitated-kilby-da786e.netlify.com/">View on Netlify</a> | <a href="https://github.com/bep/hugo-alpine-test">View on GitHub</a>
+                            <a href="https://agitated-kilby-da786e.netlify.com/">View on Netlify</a> | <a
+                                href="https://github.com/bep/hugo-alpine-test">View on GitHub</a>
                         </div>
                     </div>
                 </article>
@@ -95,4 +87,3 @@
         </div>
     </div>
 </section>
-
