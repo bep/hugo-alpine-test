@@ -7,8 +7,16 @@
     {{ $bulma := resources.Get "styles.scss" }}
     {{ $style := $bulma | resources.ToCSS | minify }}
     <link href="{{ $style.RelPermalink }}" rel="stylesheet" />
-    {{ partial "jslibs/alpinejs_turbolinks/script-src.html" }}
+    {{ partialCached "jslibs/turbolinks/script-src.html" "-" }}
+    {{ partialCached "jslibs/alpinejs/script-src.html" "-" }}
+
+    {{- $js := resources.Match "js/*.js" | resources.Concat "js/bundle.js" -}}
+    {{- if hugo.IsProduction }}{{ $js = $js | minify | fingerprint }}{{ end -}}
+    <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }} integrity="{{ $js.Data.Integrity }}" {{ end }}
+        crossorigin="anonymous" defer></script>
+
 </head>
+
 <body>
     {{ partial "alpine-blocks.html" . }}
     <section class="section">
@@ -17,4 +25,5 @@
         </div>
     </section>
 </body>
+
 </html>
