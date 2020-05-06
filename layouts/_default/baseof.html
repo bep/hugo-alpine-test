@@ -7,13 +7,14 @@
     {{ $bulma := resources.Get "styles.scss" }}
     {{ $style := $bulma | resources.ToCSS | minify }}
     <link href="{{ $style.RelPermalink }}" rel="stylesheet" />
-    {{ partialCached "jslibs/turbolinks/script-src.html" "-" }}
-    {{ partialCached "jslibs/alpinejs/script-src.html" "-" }}
 
     {{- $js := resources.Match "js/*.js" | resources.Concat "js/bundle.js" -}}
     {{- if hugo.IsProduction }}{{ $js = $js | minify | fingerprint }}{{ end -}}
     <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }} integrity="{{ $js.Data.Integrity }}" {{ end }}
-        crossorigin="anonymous" defer></script>
+        crossorigin="anonymous"></script>
+
+    {{ partialCached "jslibs/turbolinks/script-src.html" "-" }}
+    {{ partialCached "jslibs/alpinejs/script-src.html" "-" }}
 
 </head>
 

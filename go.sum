@@ -2,11 +2,14 @@ github.com/FortAwesome/Font-Awesome v0.0.0-20191210225213-d8db3d032d22 h1:vs/jwN
 github.com/FortAwesome/Font-Awesome v0.0.0-20191210225213-d8db3d032d22/go.mod h1:IUgezN/MFpCDIlFezw3L8j83oeiIuYoj28Miwr/KUYo=
 github.com/alpinejs/alpine v2.1.0+incompatible/go.mod h1:BKI81egATMnaKqFeX5HEfYMnjZjcjcZmrYAu5Nck+EY=
 github.com/alpinejs/alpine v2.2.3+incompatible/go.mod h1:BKI81egATMnaKqFeX5HEfYMnjZjcjcZmrYAu5Nck+EY=
+github.com/alpinejs/alpine v2.3.3+incompatible/go.mod h1:BKI81egATMnaKqFeX5HEfYMnjZjcjcZmrYAu5Nck+EY=
 github.com/bep/hugo-jslibs v0.0.0-20200330174857-4b120648aded h1:RJ6WSo+sSxsW8nO+uLjmidrFXo2e6USii+134Tyf1S4=
 github.com/bep/hugo-jslibs/alpinejs v0.5.0 h1:8hLPRB231M3/VLt9DVhNnHpaGBiXMhwVCFYlz3ysOFY=
 github.com/bep/hugo-jslibs/alpinejs v0.5.0/go.mod h1:wf9mgCTM9hqiEzNBKaS1F/uFxlX5joZ29Jk/qsrGJKA=
 github.com/bep/hugo-jslibs/alpinejs v0.5.5 h1:1EgYtPWCe0nOH5vX19wZigLvSmvY2CjK0kUmTuNkF/o=
 github.com/bep/hugo-jslibs/alpinejs v0.5.5/go.mod h1:tcf0z/jhLaVl/AevbbcRQUJ7EkrVt/A2y3+VY1ZPoIw=
+github.com/bep/hugo-jslibs/alpinejs v0.5.9 h1:53KBNJO5OwwD9g4Vwsode5pM1jLaQbIwX/MA7+gC22I=
+github.com/bep/hugo-jslibs/alpinejs v0.5.9/go.mod h1:f6CE0g74rrl1Gy11o0oWXcyWWoDBuaPfo/tI4WfgRYc=
 github.com/bep/hugo-jslibs/turbolinks v0.1.0 h1:GC8uyvyKGyQVfUgRGno7GiWU+4dGrcP3/snQv//5FEk=
 github.com/bep/hugo-jslibs/turbolinks v0.1.0/go.mod h1:CQHa51PjmF5gavvhS3JKSE9ywo8h7QgOj3D88ry6qu0=
 github.com/bep/portable-hugo-links v0.5.3 h1:JYuXkKycDMmkcmQMnQyRKal4s8h72GVpXISRxyOWMyA=
