@@ -1,31 +1,35 @@
 <html>
-
-<head>
+  <head>
     {{ hugo.Generator }}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {{ $bulma := resources.Get "styles.scss" }}
     {{ $style := $bulma | resources.ToCSS | minify }}
     <link href="{{ $style.RelPermalink }}" rel="stylesheet" />
-
-    {{- $js := resources.Match "js/*.js" | resources.Concat "js/bundle.js" -}}
-    {{- if hugo.IsProduction }}{{ $js = $js | minify | fingerprint }}{{ end -}}
-    <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }} integrity="{{ $js.Data.Integrity }}" {{ end }}
-        crossorigin="anonymous"></script>
-
-    {{ partialCached "jslibs/turbolinks/script-src.html" "-" }}
-    {{ partialCached "jslibs/alpinejs/script-src.html" "-" }}
-
-</head>
-
-<body>
+    {{ $params := dict }}
+    {{ $sourceMap := cond hugo.IsProduction "" "inline" }}
+    {{ $opts := dict "sourceMap" $sourceMap "minify" hugo.IsProduction "target" "es2016" "params" $params }}
+    {{- $js := resources.Get "js/index.js" | js.Build $opts -}}
+    {{- if hugo.IsProduction }}
+      {{ $js = $js | minify | fingerprint }}
+    {{ end -}}
+    <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}
+      integrity="{{ $js.Data.Integrity }}" {{ end }}
+      crossorigin="anonymous" defer>
+    </script>
+    
+  </head>
+  
+  <body>
     {{ partial "alpine-blocks.html" . }}
     <section class="section">
-        <div class="container content" id="main">
-            <a href="/">Home</a>
-            {{ block "main" . }}{{ end }}
-        </div>
+      <div class="container content" id="main">
+        <a href="/">
+          Home
+        </a>
+        {{ block "main" . }}{{ end }}
+      </div>
     </section>
-</body>
-
+  </body>
+  
 </html>

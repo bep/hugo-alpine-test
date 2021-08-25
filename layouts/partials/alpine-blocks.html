@@ -1,89 +1,155 @@
 <section class="section">
-    <div class="container">
-        <div class="tile is-ancestor">
-            <div class="tile is-vertical is-8">
-                <div class="tile">
-                    <div class="tile is-parent is-vertical">
-                        <article class="tile is-child notification is-primary">
-                            <p class="title">x-bind class</p>
-                            <div class="control" x-data="model.New()" x-init="init()">
-                                <button @click="show = ! show" class="button is-info">Show</button>
-                                <div class="modal" x-bind:class="{ 'is-active': show }">
-                                    <div class="modal-background"></div>
-                                    <div class="modal-content">
-                                        <p class="image is-4by3">
-                                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="">
-                                        </p>
-                                    </div>
-                                    <button @click="show = ! show" class="modal-close is-large"
+  <div class="container">
+    <div class="tile is-ancestor">
+      <div class="tile is-vertical is-8">
+        <div class="tile">
+          <div class="tile is-parent is-vertical">
+            <article class="tile is-child notification is-primary">
+              <p class="title">
+                x-bind class
+              </p>
+              <div class="control">
+                <button @click="show = ! show" class="button is-info">
+                  Show
+                </button>
+                <div class="modal" x-bind:class="{ 'is-active': show }">
+                  <div class="modal-background"></div>
+                  <div class="modal-content">
+                    <p class="image is-4by3">
+                      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="">
+                    </p>
+                  </div>
+                  <button @click="show = ! show" class="modal-close is-large"
                                         aria-label="close"></button>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="tile is-child notification is-warning">
-                            <p class="title">Bottom</p>
-                            <p class="subtitle">Bottom tile1</p>
-                        </article>
-                    </div>
-                    <div class="tile is-parent">
-                        <article class="tile is-child notification is-info">
-                            <p class="title">Dropdown</p>
-                            <div class="dropdown" x-data="model.New()" x-init="init()"
+                </div>
+              </div>
+            </article>
+            <article class="tile is-child notification is-primary">
+              <p class="title">
+                Nesting Data
+              </p>
+              <div class="control" x-data="model.Comp1()">
+                <button x-text="c1" @click="click()"  class="button is-info"></button>
+                <button x-data="model.Comp2()" x-text="c2"  @click="click()"  class="button is-info"></button>
+                <button x-data x-text="$store.myglobal.c1"  class="button is-warning" disabled></button>
+              </div>
+            </article>
+            <article class="tile is-child notification is-primary">
+              <p class="title">
+                Sibling Data
+              </p>
+              <div class="control">
+                <button x-text="c1" @click="click()"  class="button is-info" x-data="model.Comp1()" @set-c3.window="c3 = $event.detail"></button>
+                <button x-data="model.Comp3()" x-text="c3"  @click="click()"  class="button is-info" @set-c1.window="c1 = $event.detail"></button>
+              </div>
+            </article>
+            <article class="tile is-child notification is-primary">
+              <p class="title">
+                Global Data
+              </p>
+              <div class="control">
+                <button x-text="$store.myglobal.c1" @click="$store.myglobal.clickme()"  class="button is-info" x-data></button>
+              </div>
+            </article>
+            <article class="tile is-child notification is-warning">
+              <p class="title">
+                Bottom
+              </p>
+              <p class="subtitle">
+                Bottom tile1
+              </p>
+            </article>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-info">
+              <p class="title">
+                Dropdown
+              </p>
+              <div class="dropdown" x-data="model.Comp1()" 
                                 x-bind:class="{ 'is-active': open }" x-on:click.away="open=false" id="dropdown"
                                 data-turbolinks-permanent>
-                                <div class="dropdown-trigger">
-                                    <button x-on:click="open=!open" class="button" aria-haspopup="true"
+                <div class="dropdown-trigger">
+                  <button x-on:click="open=!open" class="button" aria-haspopup="true"
                                         aria-controls="dropdown-menu">
-                                        <span>Dropdown button</span>
-                                        <span class="icon is-small">
-                                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                        </span>
-                                    </button>
-                                </div>
-                                <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                                    <div class="dropdown-content">
-                                        <template x-for="item in data.items" :key="item">
-                                            <a href="#" class="dropdown-item"
+                    <span>
+                      Dropdown button
+                    </span>
+                    <span class="icon is-small">
+                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                  <div class="dropdown-content">
+                    <template x-for="item in data.items" :key="item.id">
+                      <a href="#" class="dropdown-item"
                                                 x-bind:class="{ 'is-active' : item.isActive }" x-text="item.name"></a>
-                                        </template>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
+                    </template>
+                  </div>
                 </div>
-                <div class="tile is-parent">
-                    <article class="tile is-child notification">
-                        <p class="title">Tabs</p>
-                        <div class="content tabs is-boxed is-toggle is-fullwidth" x-data="{ currentTab: 'tab1' }"
-                            id="tabs" data-turbolinks-permanent>
-                            <ul>
-                                <li x-bind:class="{ 'is-active': currentTab ===
-                              'tab1' }" x-on:click="currentTab= 'tab1'"><a>Pictures</a></li>
-                                <li x-bind:class="{ 'is-active': currentTab ===
-                              'tab2' }" x-on:click="currentTab= 'tab2'"><a>Music</a></li>
-                                <li x-bind:class="{ 'is-active': currentTab ===
-                              'tab3' }" x-on:click="currentTab= 'tab3'"><a>Videos</a></li>
-                                <li x-bind:class="{ 'is-active': currentTab ===
-                              'tab4' }" x-on:click="currentTab= 'tab4'"><a>Documents</a></li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-            </div>
-            <div class="tile is-parent">
-                <article class="tile is-child notification is-success">
-                    <div class="content">
-                        <p class="title">Tall tile</p>
-                        <p class="subtitle">With even more content</p>
-                        <div class="content">
-                            <a href="https://agitated-kilby-da786e.netlify.com/">View on Netlify</a> | <a
-                                href="https://github.com/bep/hugo-alpine-test">View on GitHub</a>
-                        </div>
-                    </div>
-                </article>
-            </div>
+              </div>
+            </article>
+          </div>
         </div>
+        <div class="tile is-parent">
+          <article class="tile is-child notification">
+            <p class="title">
+              Tabs
+            </p>
+            <div class="content tabs is-boxed is-toggle is-fullwidth" x-data="{ currentTab: 'tab1' }"
+                            id="tabs" data-turbolinks-permanent>
+              <ul>
+                <li x-bind:class="{ 'is-active': currentTab ===
+                              'tab1' }" x-on:click="currentTab= 'tab1'">
+                  <a>
+                    Pictures
+                  </a>
+                </li>
+                <li x-bind:class="{ 'is-active': currentTab ===
+                              'tab2' }" x-on:click="currentTab= 'tab2'">
+                  <a>
+                    Music
+                  </a>
+                </li>
+                <li x-bind:class="{ 'is-active': currentTab ===
+                              'tab3' }" x-on:click="currentTab= 'tab3'">
+                  <a>
+                    Videos
+                  </a>
+                </li>
+                <li x-bind:class="{ 'is-active': currentTab ===
+                              'tab4' }" x-on:click="currentTab= 'tab4'">
+                  <a>
+                    Documents
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-success">
+          <div class="content">
+            <p class="title">
+              Tall tile
+            </p>
+            <p class="subtitle">
+              With even more content
+            </p>
+            <div class="content">
+              <a href="https://agitated-kilby-da786e.netlify.com/">
+                View on Netlify
+              </a>
+              |
+              <a
+                                href="https://github.com/bep/hugo-alpine-test">
+                View on GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
+  </div>
 </section>
