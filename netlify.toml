@@ -3,7 +3,7 @@ publish = "public"
 command = "hugo --gc"
 
 [build.environment]
-HUGO_VERSION = "0.87.0"
+HUGO_VERSION = "0.88.0"
 HUGO_ENVIRONMENT = "development"
 
 [context.deploy-preview]

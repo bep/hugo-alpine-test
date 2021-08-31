@@ -6,6 +6,8 @@ disableKinds = ["section", "taxonomy", "taxonomyTerm"]
 
 [module]
 [[module.imports]]
+path = "github.com/gohugoio/hugo-mod-jslibs/alpinejs/v3"
+[[module.imports]]
 path="github.com/bep/portable-hugo-links"
 [[module.imports]]
 path = "github.com/jgthms/bulma"

@@ -8,7 +8,10 @@
     <link href="{{ $style.RelPermalink }}" rel="stylesheet" />
     {{ $params := dict }}
     {{ $sourceMap := cond hugo.IsProduction "" "inline" }}
-    {{ $opts := dict "sourceMap" $sourceMap "minify" hugo.IsProduction "target" "es2016" "params" $params }}
+    {{ $shims := dict "@vue/reactivity" "jslibs/vue-next/v3/reactivity/src/index" "@vue/shared" "jslibs/vue-next/v3/shared/src/index" }}
+    {{ $env := cond hugo.IsProduction `'production'` `'development'`  }}
+    {{ $defines := dict "process.env.NODE_ENV" $env "ALPINE_VERSION" `'v3-hugo'` "__DEV__" (not hugo.IsProduction) }}
+    {{ $opts := dict "sourceMap" $sourceMap "minify" hugo.IsProduction "target" "es2016" "params" $params "shims" $shims "defines" $defines }}
     {{- $js := resources.Get "js/index.js" | js.Build $opts -}}
     {{- if hugo.IsProduction }}
       {{ $js = $js | minify | fingerprint }}
@@ -18,18 +21,44 @@
       crossorigin="anonymous" defer>
     </script>
     
+    <script type="module">
+      import hotwiredTurbo from 'https://cdn.skypack.dev/@hotwired/turbo';
+    </script>
   </head>
-  
   <body>
-    {{ partial "alpine-blocks.html" . }}
-    <section class="section">
-      <div class="container content" id="main">
-        <a href="/">
-          Home
+    
+    <nav class="navbar is-transparent">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="{{ site.Home.RelPermalink }}">
+          AlpineJS v3 Test
         </a>
-        {{ block "main" . }}{{ end }}
+        <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div id="navbarExampleTransparentExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="{{ site.Home.RelPermalink }}">
+            Home
+          </a>
+        </div>
+      </div>
+    </nav>
+    <section class="section">
+      <div class="container">
+        {{ partial "alpine-blocks.html" . }}
       </div>
     </section>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>
+            AlpineJS Test.
+          </strong>
+        </p>
+      </div>
+    </footer>
   </body>
-  
 </html>
